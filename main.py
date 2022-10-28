@@ -1,5 +1,5 @@
 def main():
-    my_fib = Fib()
+    my_fib = FibCached() 
    
     print(my_fib.fib(10)) 
  
@@ -11,5 +11,13 @@ class Fib:
         if in_num < 3:
             return self.beginning_nums[in_num] 
         return self.fib(in_num - 1) + self.fib(in_num - 2) 
+      
+class FibCached(Fib): # added line
+    def __init__(self): # added line
+        self.cache = {} # added line
+    def fib(self, in_num): # added line
+        if in_num not in self.cache: # added line
+            self.cache[in_num] = super().fib(in_num) # added line
+        return self.cache[in_num] # added line
 
 
