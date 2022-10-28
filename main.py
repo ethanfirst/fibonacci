@@ -1,5 +1,10 @@
 def main():
-    my_fib = FibCached() 
+   
+    if input("cached? (y/n) ") == "y": # added line
+        my_fib = FibCached() # added line
+    else: # added line
+        my_fib = Fib() # added line
+
    
     print(my_fib.fib(10)) 
  
