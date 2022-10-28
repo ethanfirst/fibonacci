@@ -8,3 +8,4 @@ class Fib:
         return self.beginning_nums[in_num]
 
 main()
+
